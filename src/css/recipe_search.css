@@ -1,0 +1,225 @@
+/* :root
+{
+    --c1: #151419;
+    --c2: #f56e0f;
+    --c3: #1b1b1e;
+    --c4: #262626;
+    --c5: #878787;
+    --c6: #fbfbfb;
+    --bxshadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+} */
+
+/* <--------------------------------------------------------------------------------------------------------------->*/
+
+#recipe1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 65vh;
+    background: url('../images/recipe1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    gap: 2rem;
+}
+
+#recipe1 .filter
+{
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+
+}
+
+#recipe1 .title-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    gap: 1rem;
+   
+}
+
+#recipe1 .title-container h2
+{
+    font-size: 30px;
+    color: var(--c6);
+}
+
+#recipe1 .title-container p
+{
+    font-size: 16px;
+    color: var(--c6);
+}
+
+
+#recipe1 .search-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* background-color: yellow; */
+    width: 45%;
+    height: 40px;
+}
+
+#recipe1 .search-container input
+{
+    width: 80%;
+    height: 100%;
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+#recipe1 .search-container a
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    /* padding: 1rem 0; */
+    background-color: var(--c2);
+    cursor: pointer;
+    color: var(--c3);
+    font-size: 18px;
+    gap: 0.5rem;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transition: 0.3s ease;
+}
+
+#recipe1 .search-container a:hover
+{
+    color: var(--c6);
+}
+
+#recipe1 .search-container a i
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+}
+/* <--------------------------------------------------------------------------------------------------------------->*/
+
+
+#category-section
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: relative;
+    
+}
+
+
+#category-section .category-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    /* background-color: #FF8F00; */
+    padding: 2rem 2% 2rem;
+    gap: 2rem;
+    
+}
+#category-section .category-container .recipe-info-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    background-color: var(--c6);
+    border: 2px solid var(--c6);
+    box-shadow: var(--bxshadow);
+    position: relative;
+    /* flex-shrink: 0; */
+}
+
+.recipe-info-container .img-container
+{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--c2);
+}
+
+.recipe-info-container .img-container img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-info-container .content
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #0000008a;
+    width: 100%;
+    height: 50%;
+    padding: 1rem 3%;
+    line-height: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: var(--c6);
+}
+
+.recipe-info-container .content p
+{
+    font-size: 16px;
+}
+.recipe-info-container .content h3
+{
+    font-size: 17px;
+}
+
+.not-found 
+{
+    text-align: center; 
+    margin: 1rem auto; 
+    width: auto;
+}
+
+
+.not-found h2 
+{
+    font-size: 30px; 
+    margin-bottom: 1rem; 
+    color: var(--c2);
+}
+
+.not-found p 
+{
+    font-size: 16px; 
+    color: var(--c5); 
+}
+
+
+
+
+
+
+/* <--------------------------------------------------------------------------------------------------------------->*/
