@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Sharing</title>
+    <link rel="icon" type="img/png" href="../../assets/images/cooking.png" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="content-header">
+            <div class="logo">
+                <h1 id="logo-title" onclick="reloadPage()">BiteDelight</h1>
+            </div>
+
+            <div class="nav-container">
+                <nav class="header-nav">
+                    <a href="../../index.html" class="nav-tab ">home</a>
+                    <a href="./recipes.html" class="nav-tab">recipes</a>
+                    <a href="./blog.html" class="nav-tab">blog</a>
+                    <a href="./contact.html" class="nav-tab active">contact us</a>
+                </nav>
+    
+                <a href="./login.html" id="login-btn">Login</a>
+                <div class="dropdown">
+                    <a href="#" id="user"><i class='bx bx-user-circle'></i></a>
+                    <div class="user-menu-container" id="user-popup">
+                        <div class="user-menu">
+                            <a href="./profile.html">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Inform</a>
+                            <a href="#" id="log-out">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="scroll-to-top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
+
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-card">
+                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>OUR MAIN OFFICE</h3>
+                <p>SoHo 94 Broadway St<br>New York, NY 1001</p>
+            </div>
+            <div class="contact-card">
+                <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                <h3>PHONE NUMBER</h3>
+                <p>234-9876-5400<br>888-0123-4567 (Toll Free)</p>
+            </div>
+            <div class="contact-card">
+                <div class="icon"><i class="fas fa-fax"></i></div>
+                <h3>FAX</h3>
+                <p>1-234-567-8900</p>
+            </div>
+            <div class="contact-card">
+                <div class="icon"><i class="fas fa-envelope"></i></div>
+                <h3>EMAIL</h3>
+                <p><a href="mailto:hello@theme.com">hello@theme.com</a></p>
+            </div>
+        </div>
+        <div class="form-and-info">
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Name" required>
+                    </div>
+                    <textarea placeholder="Message" rows="5" required></textarea>
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h2>Contact us</h2>
+                <p>We are always ready to listen to your thoughts! Whether you have a question, feedback, or just want to chat about your favorite dishes, don't hesitate to reach out to us. Every thought you share is important and helps us improve every day. Leave us a message, and we will respond as soon as possible. We look forward to connecting and sharing with you on this culinary journey!</p>
+                <div class="social-icons">
+                    <a href="#" class="sub-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="sub-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="sub-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="sub-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <footer class="footer">
+
+        <div class="top-footer">
+            <div class="filter"></div>
+            <div class="top-logo-content">
+               <div class="container">
+                    <div id="logo">BiteDelight</div>
+                    <p>Sologan company</p>
+               </div>
+            </div>
+
+            <div class="top-content">
+                <div class="part">
+                    <h3>About us</h3>
+                    <div class="form">
+                        <p>Our mission</p>
+                        <p>We're hiring</p>
+                    </div>
+                </div>
+
+                <div class="part">
+                    <h3>Resources</h3>
+                    <div class="form">
+                        <p>Tutorials</p>
+                        <p>Brand assests</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <h3>Contact us</h3>
+                    <div class="form">
+                        <p>321-555-5555</p>
+                        <p>info@company.com</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <div class="form">
+                        <input type="text" placeholder="Name"></input>
+                        <input type="text" placeholder="Email"></input>
+                        <a>Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="part">
+                <div class="icon-container">
+                    <a class="icon" href="../../index.html" title="Home"><i class='bx bx-home' ></i></a>
+                    <a class="icon" href="./recipes.html" title="Recipes"><i class='bx bxs-category'></i></a>
+                    <a class="icon" href="./blog.html" title="Blog"><i class='bx bx-news'></i></a>
+                    <a class="icon" href="./contact.html" title="Contact"><i class='bx bxs-phone'></i></a>
+                    <a title="Go up" href="#" class="icon"><i class='bx bx-up-arrow-alt'></i></a>
+                </div>
+            </div>
+            <div class="part">
+                <h4>&copy;Copyright. All rights reserved.</h4>
+            </div>
+        </div>
+   </footer>
+
+</body>
+<script src="../js/contact.js" type="module"></script>
+
+</html>

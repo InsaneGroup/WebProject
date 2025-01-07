@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Sharing</title>
+    <link rel="icon" type="img/png" href="../../assets/images/cooking.png" />
+    <link rel="preload" href="../../assets/images/1736222765856.webp" as="image">
+    <link rel="preload" href="../../assets/images/unique.webp" as="image">
+    <link rel="preload" href="../../assets/images/pho.jpg" as="image">
+    <link rel="preload" href="../../assets/images/easy_cook.jpg" as="image">
+    <link rel="preload" href="../../assets/images/christine-ha.webp" as="image">
+    
+    <link rel="preload" href="../../assets/images/sauteing.jpg" as="image">
+    <link rel="preload" href="../../assets/images/roasting.jpg" as="image">
+    <link rel="preload" href="../../assets/images/steaming.jpg" as="image">
+    <link rel="preload" href="../../assets/images/story1.jpg" as="image">
+    <link rel="preload" href="../../assets/images/story2.jpg" as="image">
+    <link rel="preload" href="../../assets/images/story3.webp" as="image">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="content-header">
+            <div class="logo">
+                <h1 id="logo-title" onclick="reloadPage()">BiteDelight</h1>
+            </div>
+
+            <div class="nav-container">
+                <nav class="header-nav">
+                    <a href="../../index.html" class="nav-tab ">home</a>
+                    <a href="./recipes.html" class="nav-tab">recipes</a>
+                    <a href="./blog.html" class="nav-tab active">blog</a>
+                    <a href="./contact.html" class="nav-tab">contact us</a>
+                </nav>
+    
+                <a href="./login.html" id="login-btn">Login</a>
+                <div class="dropdown">
+                    <a href="#" id="user"><i class='bx bx-user-circle'></i></a>
+                    <div class="user-menu-container" id="user-popup">
+                        <div class="user-menu">
+                            <a href="./profile.html">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Inform</a>
+                            <a href="#" id="log-out">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <div class="scroll-to-top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
+
+
+
+    <!-- Blog Background -->
+    <section id="blog-background">
+        <div class="blog-overlay"></div>
+        <div class="blog-content">
+            <h2>Stories from Us</h2>
+            <p>
+                Welcome to our blog, your source for the latest updates, tips, and inspiring culinary stories! Join us as we explore flavors and ignite your passion for cooking.</p>
+            <div id="line"></div>
+            <a href="#">Learn more</a>
+
+
+        </div>
+    </section>
+
+    <!-- Latest Posts -->
+    <section id="latest-post-section">
+        <div class="lastest-post-header">
+            <h2>Latest Blog Posts</h2>
+            <p>Stay updated with the newest recipes and cooking tips from our community.</p>
+        </div>
+        <div class="post-container" id="post-container">
+                
+                
+
+        </div>
+    </section>
+
+
+    <template id="card-template">
+        <div class="card">
+
+            <div class="img-container">
+                <img src="../../assets/images/unique.webp" alt="#">
+            </div>
+
+            <h3 id="title">Discover Unique Vegetarian Dishes</h3>
+            <p id="description">Try these delicious, creative vegetarian dishes.</p>
+            <div id="line"></div>
+            <a href="https://themodernproper.com/60-best-vegetarian-meals">Learn more</a>
+
+        </div>
+    </template>
+
+
+
+
+    <!-- Basic Techniques -->
+    <section id="basic-techniques">
+        <div class="section-header">
+            <h2>Basic Cooking Techniques</h2>
+            <p>Mastering cooking techniques is the key to becoming a great chef.</p>
+        </div>
+        <div class="technique-container">
+            <div class="technique">
+                <img src="../../assets/images/sauteing.jpg" alt="Sautéing">
+                <h3>Sautéing</h3>
+                <p>Retain the crispness and fresh flavor of ingredients by preparing a non-stick pan and ensuring ingredients are evenly cut.</p>
+                <div id="line"></div>
+                <a href="https://www.theculinarypro.com/sauteing-meat-poultry" class="read-more">Read more</a>
+            </div>
+            <div class="technique">
+                <img src="../../assets/images/roasting.jpg" alt="Roasting">
+                <h3>Roasting</h3>
+                <p>Use oven heat to create crispy crusts while keeping food tender inside. A great way to maximize natural flavors.</p>
+                <div id="line"></div>
+                <a href="https://www.theculinarypro.com/roasting" class="read-more">Read more</a>
+            </div>
+            <div class="technique">
+                <img src="../../assets/images/steaming.jpg" alt="Steaming">
+                <h3>Steaming</h3>
+                <p>Retain nutrients by using steam, cooking food without additional oil or fat—perfect for healthy meals.</p>
+                <div id="line"></div>
+                <a href="https://www.theculinarypro.com/steaming-methods-for-proteins" class="read-more">Read more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Stories -->
+    <section id="community-stories">
+        <div class="section-header">
+            <h2>Community Stories</h2>
+            <p>Explore the cooking journeys of our community members.</p>
+        </div>
+        <div class="story-container">
+            <div class="story-card">
+                <img src="../../assets/images/story1.jpg" alt="Chef Sugar Lee">
+                <h3>Chef Sugar Lee's Journey</h3>
+                <p>Becoming a chef needs skills, perseverance, and teamwork.</p>
+                <div id="line"></div>
+                <a href="https://sugarcuisine.com/chef-sugar-lee-nghe-bep-de-ma-khong-de/" class="read-more">Read more</a>
+            </div>
+            <div class="story-card">
+                <img src="../../assets/images/story2.jpg" alt="Specialty Dish">
+                <h3>Hue's Specialty Dish</h3>
+                <p>The Bun Lady's journey: bringing noodles to a new land.</p>
+                <div id="line"></div>
+                <a href="https://kinhdoamthuc.com/cau-chuyen-phia-sau-mon-an-dac-san-co-do-bun-bo-hue/" class="read-more">Read more</a>
+            </div>
+            <div class="story-card">
+                <img src="../../assets/images/story3.webp" alt="Cooking Competition">
+                <h3>Community Cooking Competition</h3>
+                <p>The community's recent cooking competition drew great participation.</p>
+                <div id="line"></div>
+                <a href="https://www.escoffier.edu/blog/world-food-drink/most-prestigious-cooking-competitions-in-the-world/" class="read-more">Read more</a>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+
+
+    <footer class="footer">
+
+        <div class="top-footer">
+            <div class="filter"></div>
+            <div class="top-logo-content">
+               <div class="container">
+                    <div id="logo">BiteDelight</div>
+                    <p>Sologan company</p>
+               </div>
+            </div>
+
+            <div class="top-content">
+                <div class="part">
+                    <h3>About us</h3>
+                    <div class="form">
+                        <p>Our mission</p>
+                        <p>We're hiring</p>
+                    </div>
+                </div>
+
+                <div class="part">
+                    <h3>Resources</h3>
+                    <div class="form">
+                        <p>Tutorials</p>
+                        <p>Brand assests</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <h3>Contact us</h3>
+                    <div class="form">
+                        <p>321-555-5555</p>
+                        <p>info@company.com</p>
+                    </div>
+                </div>
+                <div class="part">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <div class="form">
+                        <input type="text" placeholder="Name"></input>
+                        <input type="text" placeholder="Email"></input>
+                        <a>Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="part">
+                <div class="icon-container">
+                    <a class="icon" href="../../index.html" title="Home"><i class='bx bx-home' ></i></a>
+                    <a class="icon" href="./recipes.html" title="Recipes"><i class='bx bxs-category'></i></a>
+                    <a class="icon" href="./blog.html" title="Blog"><i class='bx bx-news'></i></a>
+                    <a class="icon" href="./contact.html" title="Contact"><i class='bx bxs-phone'></i></a>
+                    <a title="Go up" href="#" class="icon"><i class='bx bx-up-arrow-alt'></i></a>
+                </div>
+            </div>
+            <div class="part">
+                <h4>&copy;Copyright. All rights reserved.</h4>
+            </div>
+        </div>
+   </footer>
+
+</body>
+<script src="../js/blog.js" type="module"></script>
+
+</html>
