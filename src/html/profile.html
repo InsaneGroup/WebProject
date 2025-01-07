@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Sharing</title>
     <link rel="icon" type="img/png" href="../../assets/images/cooking.png"/>
-    <link rel="preload" href="../../assets/images/recipe1.jpg" as="image">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -20,8 +19,8 @@
 
             <div class="nav-container">
                 <nav class="header-nav">
-                    <a href="../../index.html" class="nav-tab ">home</a>
-                    <a href="./recipes.html" class="nav-tab active">recipes</a>
+                    <a href="../../index.html" class="nav-tab">home</a>
+                    <a href="./recipes.html" class="nav-tab">recipes</a>
                     <a href="./blog.html" class="nav-tab">blog</a>
                     <a href="./contact.html" class="nav-tab">contact us</a>
                 </nav>
@@ -44,55 +43,98 @@
 
     </header>
 
-
+   
     <div class="scroll-to-top">
         <i class='bx bx-up-arrow-alt'></i>
     </div>
+    
 
+    <section id="profile-section">
 
-    <section id="recipe1">
-        <div class="filter"></div>
+        <div class="user-container">
+            <div class="left-user">
+                <div class="img-container">
+                    <img src="https://api.multiavatar.com/Alice Smith.svg" alt="#">
+                </div>
+                <button id="edit">Edit Profile</button>
+            </div>
 
-        <div class="title-container">
-            <h2 id="recipe-title">Find recipes</h2>
-            <p>Let us help you create the perfect meal!</p>
-        </div>
-
-        <div class="search-container">
-            <input type="text" placeholder="Find recipes..." autofocus="true" id="input-find">
-            <a id="search-button"><i class='bx bx-search'></i> Search</a>
+            <div class="right-user">
+                <div class="user-details">
+                    <h2 class="user-name">John Doe</h2>
+                    <h2 class="user-profile-title">User Profile</h2>
+                </div>
+                <div class="user-info">
+                    <div class="info">
+                        <p>Email: <span class="user-email">johndoe@example.com</span></p>
+                        <i class='bx bxs-edit'></i>
+                    </div>
+                    <div class="info">
+                        <p>Birthdate: <span class="user-birthdate">02/08/1995</span></p>
+                        <i class='bx bxs-edit'></i>
+                    </div>
+                    <div class="info">
+                        <p>Phone: <span class="user-phone">+1 234 567 890</span></p>
+                        <i class='bx bxs-edit'></i>
+                    </div>
+                    <div class="info">
+                        <p>Address: <span class="user-address">123 Main Street, New York, USA</span></p>
+                        <i class='bx bxs-edit'></i>
+                    </div>
+                    <div class="info">
+                        <p>Hobbies: <span class="user-hobbies">Cooking, Hiking, Reading</span></p>
+                        <i class='bx bxs-edit'></i>
+                    </div>
+                    <div class="info">
+                        <p>Favorite Dishes: <span class="user-favorites">Spaghetti, Sushi, Tacos</span></p>
+                        <i class='bx bxs-edit'></i>
+                    </div>
+                    <div class="info">
+                        <p>Total Recipes Posted: <span class="user-recipes">12</span></p>
+                        <i class='bx bxs-edit'></i>
+                    </div>
+                    
+                </div>
+                <hr class="divider">
+                <button id="user-logout">Log out</button>
+            </div>
+            
+            
         </div>
 
     </section>
-    
-   
-    <template id="category-template">
-        <div  class="category-container">
+
+
+    <template id="recipe-info">
+        <div class="recipe-info-container">
             <div class="img-container">
-                <img src="">
+                <img src="" loading="lazy">
             </div>
             <div class="content">
-                <h3></h3>
+                <p id="category-name"></p>
+                <h3 id="recipe-name"></h3>
+                <!-- <img src="https://flagcdn.com/w320/vn.png"> -->
             </div>
-       </div>
+        </div>
     </template>
 
 
-    <section id="recipe2">
-        <h2>Our categories</h2>
-        <div class="category">
-           
-
+    <section id="liked-section">
+        <div class="title">
+            <i class='bx bxs-heart'></i>
+            <h2>Favorite Recipes</h2>
         </div>
 
+        <div class="favorite-container">
 
+        </div>
     </section>
 
 
 
 
 
-    <footer class="footer">
+   <footer class="footer">
 
         <div class="top-footer">
             <div class="filter"></div>
@@ -139,10 +181,10 @@
         <div class="bottom-footer">
             <div class="part">
                 <div class="icon-container">
-                    <a class="icon" href="../../index.html" title="Home"><i class='bx bx-home' ></i></a>
-                    <a class="icon" href="./recipes.html" title="Recipes"><i class='bx bxs-category'></i></a>
-                    <a class="icon" href="./blog.html" title="Blog"><i class='bx bx-news'></i></a>
-                    <a class="icon" href="./contact.html" title="Contact"><i class='bx bxs-phone'></i></a>
+                    <a class="icon" href="./index.html" title="Home"><i class='bx bx-home' ></i></a>
+                    <a class="icon" href="./src/html/recipes.html" title="Recipes"><i class='bx bxs-category'></i></a>
+                    <a class="icon" href="./src/html/blog.html" title="Blog"><i class='bx bx-news'></i></a>
+                    <a class="icon" href="./src/html/contact.html" title="Contact"><i class='bx bxs-phone'></i></a>
                     <a title="Go up" href="#" class="icon"><i class='bx bx-up-arrow-alt'></i></a>
                 </div>
             </div>
@@ -153,5 +195,5 @@
    </footer>
 
 </body>
-<script src="../js/category.js" type="module"></script>
+<script src="../js/profile.js"></script>
 </html>

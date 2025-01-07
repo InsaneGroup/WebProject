@@ -34,6 +34,30 @@ const userBtn = $('#user')
 let loginState = JSON.parse(localStorage.getItem('loginState')) || false
 
 const logo_title = $('#logo-title')
+const logoutBtn = $('#log-out')
+
+const scroll_to_top = $('.scroll-to-top')
+
+window.addEventListener('scroll', ()=>
+{
+    if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+    {
+        scroll_to_top.style.display = 'flex'
+    }else 
+    {
+        scroll_to_top.style.display = 'none'
+    }
+})
+
+scroll_to_top.addEventListener('click', ()=>
+{
+    window.scroll({
+        top: 0,
+        scrollBehavior: 'smooth'
+    })
+})
+
+
 
 logo_title.addEventListener('click', ()=>
 {
@@ -55,17 +79,19 @@ function checkLogin()
 checkLogin()
 
 
-if(userBtn)
-{
-    userBtn.addEventListener('click', ()=>
+if(logoutBtn)
     {
-       if(confirm('Log out?'))
-       {
-            localStorage.setItem('loginState', JSON.stringify(loginState=false))
-            checkLogin()
-       }
-    })
-}
+        logoutBtn.addEventListener('click', ()=>
+        {
+           if(confirm('Log out?'))
+           {
+                localStorage.setItem('loginState', JSON.stringify(loginState=false))
+                checkLogin()
+                localStorage.clear();
+                 window.location.href = '../../index.html'
+           }
+        })
+    }
 
 
 

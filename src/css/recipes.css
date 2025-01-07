@@ -44,7 +44,9 @@
 #recipe1 .title-container h2
 {
     font-size: 30px;
-    color: var(--c6);
+    background: linear-gradient(45deg, #ff442f, var(--c2));
+    background-clip: text;
+    color: transparent;
 }
 
 #recipe1 .title-container p

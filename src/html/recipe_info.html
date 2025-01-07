@@ -14,19 +14,29 @@
 
         <div class="content-header">
             <div class="logo">
-                <h1 id="logo-title">BiteDelight</h1>
+                <h1 id="logo-title" onclick="reloadPage()">BiteDelight</h1>
             </div>
 
             <div class="nav-container">
                 <nav class="header-nav">
-                    <a href="../../index.html" class="nav-tab">home</a>
-                    <a href="../html/recipes.html" class="nav-tab active">recipes</a>
-                    <a href="../html/blog.html" class="nav-tab">blog</a>
-                    <a href="../html/contact.html" class="nav-tab">contact us</a>
+                    <a href="../../index.html" class="nav-tab ">home</a>
+                    <a href="./recipes.html" class="nav-tab active">recipes</a>
+                    <a href="./blog.html" class="nav-tab">blog</a>
+                    <a href="./contact.html" class="nav-tab">contact us</a>
                 </nav>
     
-                <a href="../html/login.html" id="login-btn">Login</a>
-                <a href="#" id="user"><i class='bx bx-user-circle'></i></a>
+                <a href="./login.html" id="login-btn">Login</a>
+                <div class="dropdown">
+                    <a href="#" id="user"><i class='bx bx-user-circle'></i></a>
+                    <div class="user-menu-container" id="user-popup">
+                        <div class="user-menu">
+                            <a href="./profile.html">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Inform</a>
+                            <a href="#" id="log-out">Log out</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -34,10 +44,11 @@
     </header>
 
 
+    <div class="scroll-to-top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
 
-   
-
-    
+    <div class="toast-container"></div>
     
     <section id="category-section">
         <div class="our-category">
@@ -56,7 +67,7 @@
             <div class="favorite-btn">
                 <div class="container">
                     <input type="checkbox" id="heart">
-                    <label for="heart"><ion-icon name="heart"></ion-icon></label>
+                    <label for="heart" id="label-heart"><ion-icon name="heart"></ion-icon></label>
                 </div>
             </div>
             <img src="" loading="lazy">
@@ -91,7 +102,7 @@
 
     <section id="ingredient-section">
 
-        <h2>🥕 Required Ingredients</h2>
+        <h2><i class='bx bxs-cart'></i> Required Ingredients</h2>
         <table id="ingredient-table">
             <thead>
                 <tr>
@@ -145,66 +156,63 @@
 
    <footer class="footer">
 
-        
-
-        <div class="top-footer">
-            <div class="filter"></div>
-            <div class="top-logo-content">
-               <div class="container">
-                    <div id="logo">BiteDelight</div>
-                    <p>Sologan company</p>
-               </div>
-            </div>
-
-            <div class="top-content">
-                <div class="part">
-                    <h3>About us</h3>
-                    <div class="form">
-                        <p>Our mission</p>
-                        <p>We're hiring</p>
-                    </div>
-                </div>
-
-                <div class="part">
-                    <h3>Resources</h3>
-                    <div class="form">
-                        <p>Tutorials</p>
-                        <p>Brand assests</p>
-                    </div>
-                </div>
-                <div class="part">
-                    <h3>Contact us</h3>
-                    <div class="form">
-                        <p>321-555-5555</p>
-                        <p>info@company.com</p>
-                    </div>
-                </div>
-                <div class="part">
-                    <h3>Subscribe to Our Newsletter</h3>
-                    <div class="form">
-                        <input type="text" placeholder="Name"></input>
-                        <input type="text" placeholder="Email"></input>
-                        <a>Submit</a>
-                    </div>
-                </div>
-            </div>
+    <div class="top-footer">
+        <div class="filter"></div>
+        <div class="top-logo-content">
+           <div class="container">
+                <div id="logo">BiteDelight</div>
+                <p>Sologan company</p>
+           </div>
         </div>
-        <div class="bottom-footer">
+
+        <div class="top-content">
             <div class="part">
-                <div class="icon-container">
-                    <div class="icon"><i class='bx bxl-facebook'></i></div>
-                    <div class="icon"><i class='bx bxl-twitter' ></i></div>
-                    <div class="icon"><i class='bx bx-wifi' ></i></div>
-                    <div class="icon"><i class='bx bxl-google'></i></div>
-                    <div class="icon"><i class='bx bx-dots-horizontal-rounded'></i></div>
+                <h3>About us</h3>
+                <div class="form">
+                    <p>Our mission</p>
+                    <p>We're hiring</p>
+                </div>
+            </div>
+
+            <div class="part">
+                <h3>Resources</h3>
+                <div class="form">
+                    <p>Tutorials</p>
+                    <p>Brand assests</p>
                 </div>
             </div>
             <div class="part">
-                <h4>&copy;Copyright. All rights reserved.</h4>
+                <h3>Contact us</h3>
+                <div class="form">
+                    <p>321-555-5555</p>
+                    <p>info@company.com</p>
+                </div>
+            </div>
+            <div class="part">
+                <h3>Subscribe to Our Newsletter</h3>
+                <div class="form">
+                    <input type="text" placeholder="Name"></input>
+                    <input type="text" placeholder="Email"></input>
+                    <a>Submit</a>
+                </div>
             </div>
         </div>
-
-   </footer>
+    </div>
+    <div class="bottom-footer">
+        <div class="part">
+            <div class="icon-container">
+                <a class="icon" href="../../index.html" title="Home"><i class='bx bx-home' ></i></a>
+                <a class="icon" href="./recipes.html" title="Recipes"><i class='bx bxs-category'></i></a>
+                <a class="icon" href="./blog.html" title="Blog"><i class='bx bx-news'></i></a>
+                <a class="icon" href="./contact.html" title="Contact"><i class='bx bxs-phone'></i></a>
+                <a title="Go up" href="#" class="icon"><i class='bx bx-up-arrow-alt'></i></a>
+            </div>
+        </div>
+        <div class="part">
+            <h4>&copy;Copyright. All rights reserved.</h4>
+        </div>
+    </div>
+</footer>
 
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

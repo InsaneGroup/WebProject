@@ -36,8 +36,81 @@ const categoryNameHome = JSON.parse(localStorage.getItem('categoryNameHome')) ||
 const loginButton = $('#login-btn')
 const userBtn = $('#user')
 let loginState = JSON.parse(localStorage.getItem('loginState')) || false
-
+const logoutBtn = $('#log-out')
 const logo_title = $('#logo-title')
+const scroll_to_top = $('.scroll-to-top')
+
+const heart = $('#heart')
+const toast_container = $('.toast-container')
+const label_heart = $('#label-heart')
+const favorites = JSON.parse(localStorage.getItem('favorites')) || []
+
+
+
+if(favorites)
+    {
+        favorites.forEach(f =>
+            {
+                if(JSON.stringify(f) === JSON.stringify(recipeName)) 
+                {
+                    if(label_heart)
+                    {
+                        label_heart.classList.add('active')
+                    }
+                }
+            }
+            )
+    }
+
+    if(heart)
+        {
+            heart.addEventListener('change', ()=>
+                {
+                    if(loginState)
+                    {
+                        if(heart.checked)
+                            {
+                                const exists = favorites.some(f => JSON.stringify(f) === JSON.stringify(recipeName));
+                                if(exists) 
+                                {
+                                    toastInform("Recipe is already in your favorites!");
+                                    return;
+                                }
+                                favorites.push(recipeName)
+                                localStorage.setItem('favorites', JSON.stringify(favorites))
+                                label_heart.classList.add('active')
+                                toastInform("Recipe successfully added!")
+                            }else
+                            {
+                                const index = favorites.findIndex(f => JSON.stringify(f) === JSON.stringify(recipeName));
+                                if (index !== -1) 
+                                {
+                                    favorites.splice(index, 1); 
+                                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                                    label_heart.classList.remove('active');
+                                    toastInform("Recipe successfully removed!");
+                                } 
+                            }
+                    }else toastInform('To proceed, kindly sign in to your account')
+                    
+                })
+                
+        }
+
+
+function toastInform(text)
+{
+    const div = document.createElement("div");
+    div.classList.add("toast");
+    div.innerText = text;
+    toast_container.appendChild(div);
+    setTimeout(()=>
+        {
+            div.remove();
+        },2000)
+}
+
+
 
 logo_title.addEventListener('click', ()=>
 {
@@ -45,6 +118,24 @@ logo_title.addEventListener('click', ()=>
 })
 
 
+window.addEventListener('scroll', ()=>
+{
+    if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+    {
+        scroll_to_top.style.display = 'flex'
+    }else 
+    {
+        scroll_to_top.style.display = 'none'
+    }
+})
+
+scroll_to_top.addEventListener('click', ()=>
+{
+    window.scroll({
+        top: 0,
+        scrollBehavior: 'smooth'
+    })
+})
 
 
 
@@ -65,17 +156,19 @@ function checkLogin()
 checkLogin()
 
 
-if(userBtn)
-{
-    userBtn.addEventListener('click', ()=>
+if(logoutBtn)
     {
-       if(confirm('Log out?'))
-       {
-            localStorage.setItem('loginState', JSON.stringify(loginState=false))
-            checkLogin()
-       }
-    })
-}
+        logoutBtn.addEventListener('click', ()=>
+        {
+           if(confirm('Log out?'))
+           {
+                localStorage.setItem('loginState', JSON.stringify(loginState=false))
+                checkLogin()
+                localStorage.clear();
+                 window.location.href = '../../index.html'
+           }
+        })
+    }
 
 
 
@@ -156,11 +249,7 @@ async function showRecipeInfo()
 
     if(left_instruction)
     {
-        if(meals.strYoutube.length === 0 || meals.strYoutube === null)
-        {
-            left_instruction.querySelector('iframe').src = convertYouTubeURL('https://www.youtube.com/watch?v=XIMLoLxmTDw')
-        }else left_instruction.querySelector('iframe').src = convertYouTubeURL(meals.strYoutube) 
-
+        left_instruction.querySelector('iframe').src = convertYouTubeURL(meals.strYoutube) 
         left_instruction.querySelector('a').href = meals.strSource
     }
 

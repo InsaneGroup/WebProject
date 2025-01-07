@@ -14,25 +14,38 @@
 
         <div class="content-header">
             <div class="logo">
-                <h1 id="logo-title">BiteDelight</h1>
+                <h1 id="logo-title" onclick="reloadPage()">BiteDelight</h1>
             </div>
 
             <div class="nav-container">
                 <nav class="header-nav">
-                    <a href="../../index.html" class="nav-tab">home</a>
-                    <a href="../html/recipes.html" class="nav-tab active">recipes</a>
-                    <a href="../html/blog.html" class="nav-tab">blog</a>
-                    <a href="../html/contact.html" class="nav-tab">contact us</a>
+                    <a href="../../index.html" class="nav-tab ">home</a>
+                    <a href="./recipes.html" class="nav-tab active">recipes</a>
+                    <a href="./blog.html" class="nav-tab">blog</a>
+                    <a href="./contact.html" class="nav-tab">contact us</a>
                 </nav>
     
-                <a href="../html/login.html" id="login-btn">Login</a>
-                <a href="#" id="user"><i class='bx bx-user-circle'></i></a>
+                <a href="./login.html" id="login-btn">Login</a>
+                <div class="dropdown">
+                    <a href="#" id="user"><i class='bx bx-user-circle'></i></a>
+                    <div class="user-menu-container" id="user-popup">
+                        <div class="user-menu">
+                            <a href="./profile.html">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Inform</a>
+                            <a href="#" id="log-out">Log out</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
 
     </header>
 
+    <div class="scroll-to-top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
 
 
     <template id="recipe-info">
@@ -77,10 +90,7 @@
 
 
 
-
-   <footer class="footer">
-
-        
+    <footer class="footer">
 
         <div class="top-footer">
             <div class="filter"></div>
@@ -127,18 +137,17 @@
         <div class="bottom-footer">
             <div class="part">
                 <div class="icon-container">
-                    <div class="icon"><i class='bx bxl-facebook'></i></div>
-                    <div class="icon"><i class='bx bxl-twitter' ></i></div>
-                    <div class="icon"><i class='bx bx-wifi' ></i></div>
-                    <div class="icon"><i class='bx bxl-google'></i></div>
-                    <div class="icon"><i class='bx bx-dots-horizontal-rounded'></i></div>
+                    <a class="icon" href="../../index.html" title="Home"><i class='bx bx-home' ></i></a>
+                    <a class="icon" href="./recipes.html" title="Recipes"><i class='bx bxs-category'></i></a>
+                    <a class="icon" href="./blog.html" title="Blog"><i class='bx bx-news'></i></a>
+                    <a class="icon" href="./contact.html" title="Contact"><i class='bx bxs-phone'></i></a>
+                    <a title="Go up" href="#" class="icon"><i class='bx bx-up-arrow-alt'></i></a>
                 </div>
             </div>
             <div class="part">
                 <h4>&copy;Copyright. All rights reserved.</h4>
             </div>
         </div>
-
    </footer>
 
 </body>

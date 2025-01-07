@@ -21,15 +21,42 @@ const categoryNameHome = []
 
 const loginButton = $('#login-btn')
 const userBtn = $('#user')
+const logoutBtn = $('#log-out')
 let loginState = JSON.parse(localStorage.getItem('loginState')) || false
+const scroll_to_top = $('.scroll-to-top')
 
-
-const logo_title = $('#logo-title')
-
-logo_title.addEventListener('click', ()=>
+window.addEventListener('scroll', ()=>
 {
-    window.location.href = '../../index.html'
+    if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+    {
+        scroll_to_top.style.display = 'flex'
+    }else 
+    {
+        scroll_to_top.style.display = 'none'
+    }
 })
+
+scroll_to_top.addEventListener('click', ()=>
+{
+    window.scroll({
+        top: 0,
+        scrollBehavior: 'smooth'
+    })
+})
+
+
+
+
+
+
+// const logo_title = $('#logo-title')
+
+// logo_title.addEventListener('click', ()=>
+// {
+//     window.location.href = '../../index.html'
+// })
+
+const reloadPage = ()=> {window.location.reload()}
 
 function checkLogin()
 {
@@ -46,14 +73,15 @@ function checkLogin()
 checkLogin()
 
 
-if(userBtn)
+if(logoutBtn)
 {
-    userBtn.addEventListener('click', ()=>
+    logoutBtn.addEventListener('click', ()=>
     {
        if(confirm('Log out?'))
        {
             localStorage.setItem('loginState', JSON.stringify(loginState=false))
             checkLogin()
+            localStorage.clear();
        }
     })
 }
@@ -191,6 +219,7 @@ async function  getMeal(name)
 
 async function showRecipeInHome3() 
 {
+    let index = 0
     try
    {
         for(const row of main_row)
@@ -198,7 +227,8 @@ async function showRecipeInHome3()
             const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php')
             const data = await response.json()
 
-            const recipe = templateRecipe.content.cloneNode(true) 
+            const recipe = templateRecipe.content.cloneNode(true)
+            recipe.querySelector('.recipe').style = `--i: ${index++}`
             recipe.querySelector('.recipe').style.backgroundImage = `url(${data.meals[0].strMealThumb})`
             recipe.querySelector('#recipe-title').innerText = data.meals[0].strMeal
             recipe.querySelector('#recipe-info').innerText = data.meals[0].strTags

@@ -69,7 +69,7 @@
 
 .our-category #back-btn
 {
-    background-color: var(--c1);
+    background-color: var(--c4);
     color: var(--c6);
     border-radius: 20px;
     width: 40px;
@@ -96,7 +96,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 60%;
     height: 400px;
     overflow: hidden;
     border-radius: 10px;
@@ -166,8 +166,33 @@
 
 .favorite-btn .container input:checked ~ label
 {
-    color: #ff3239;
-    /* background-color: yellow; */
+    color: #ff3f45;
+}
+
+.favorite-btn .container label.active
+{
+    color: #ff3f45;
+}
+
+.toast-container
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.toast
+{
+    background-color: var(--c2);
+    border: 2px solid var(--c6);
+    border-radius: 10px;
+    color: var(--c6);
+    padding: 1rem;
+    font-size: 16px;
+    margin: 1rem;
+    font-weight: bold;
+    box-shadow: var(--bxshadow);
 }
 
 
@@ -188,10 +213,10 @@
 {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     height: auto;
     /* border: 1px solid black; */
-    padding: 1rem 2% 1rem;
+    padding: 1rem 1% 1rem;
     /* background-color: pink; */
     gap: 2rem;
 }
@@ -238,6 +263,7 @@
 #recipe-content-container .recipe-content #ingredient:hover
 {
     text-decoration: underline 2px;
+    color: var(--c2);
 }
 
 #recipe-content-container .recipe-content #instruction
@@ -247,6 +273,7 @@
 #recipe-content-container .recipe-content #instruction:hover
 {
    text-decoration: underline 2px;
+   color: var(--c2);
 }
 
 #recipe-content-container .recipe-content ion-icon
@@ -391,7 +418,12 @@
     height: 100%;
     display: flex;
     border-radius: 10px;
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.2), rgba(0, 0, 255, 0.2), rgba(0, 255, 0, 0.2));
+    background-size: 300% 300%;
+    animation: gradient-animation 6s ease infinite;
 }
+
+
 
 #recipe-source 
 {
@@ -405,7 +437,7 @@
     color: var(--c3);
     /* background: #007BFF; */
     background-color: var(--c2);
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-radius: 5px;
     font-weight: bold;
     transition: 0.2s ease;
@@ -455,4 +487,17 @@
 {
     background: var(--c6);
     border-radius: 100rem;
+}
+
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%; 
+    }
+    50% {
+        background-position: 100% 50%; 
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }

@@ -71,14 +71,11 @@
 #category-section .category-container
 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    background-color: var(--c6);
     padding: 2rem 2% 2rem;
     gap: 2rem;
+    flex-wrap: wrap;
+    background-color: var(--c6);
+    height: auto;
     
 }
 #category-section .category-container .recipe-info-container
