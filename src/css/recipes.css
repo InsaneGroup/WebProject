@@ -154,7 +154,7 @@
 
 #recipe2 .category::-webkit-scrollbar
 {
-    height: 5px;
+    height: 7px;
 }
 
 #recipe2 .category::-webkit-scrollbar-thumb 

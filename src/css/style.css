@@ -624,7 +624,7 @@ body::-webkit-scrollbar-track
     background-color: var(--c3);
     animation: slide-in-left calc(1s * var(--i)) linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+    animation-range: entry 0% cover 10%;
     
 }
 
@@ -737,7 +737,7 @@ body::-webkit-scrollbar-track
     /* background-color: azure; */
     position: relative;
     gap: 1rem;
-    animation: slide-in-left calc(0.6s * var(--i)) linear;
+    animation: slide-in-bottom calc(1s * var(--i)) linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
     animation-fill-mode: both;

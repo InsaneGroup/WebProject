@@ -5,7 +5,7 @@ const $$ = document.querySelectorAll.bind(document)
 const signUpButton = $('#signUp');
 const signInButton = $('#signIn');
 const container = $('#container');
-
+const toast_container = $('.toast-container')
 const submitSignIn = $('#submit-sign-in')
 const inputEmail = $('#sign-in-email')
 const inputPassword = $('#sign-in-password')
@@ -42,7 +42,7 @@ if(submitSignIn)
 		if(inputEmail.value === "" || inputPassword.value === "")
 		{
 			localStorage.setItem('loginState', JSON.stringify(loginState=false))
-			alert('please enter your email and password!')
+			toastInform('Please enter your email and password!')
 		}else
 		{
 			if(inputEmail.value === user.userEmail)
@@ -51,18 +51,31 @@ if(submitSignIn)
 					{
 						localStorage.setItem('loginState', JSON.stringify(loginState=true))
 						window.location.href = '../../index.html'
-						alert('success')
+						// toastInform('Login successfully')
+						alert('Success')
 					}else
 					{
 						localStorage.setItem('loginState', JSON.stringify(loginState=false))
-						alert('wrong password')
+						toastInform('Wrong password')
 					}
 				}else
 				{
 					localStorage.setItem('loginState', JSON.stringify(loginState=false))
-					alert('wrong email')
+					toastInform('Wrong email')
 				}
 		}
 
 	})
+}
+
+function toastInform(text)
+{
+    const div = document.createElement("div");
+    div.classList.add("toast");
+    div.innerText = text;
+    toast_container.appendChild(div);
+    setTimeout(()=>
+        {
+            div.remove();
+        },2000)
 }

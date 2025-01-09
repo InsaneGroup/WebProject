@@ -11,6 +11,12 @@ const favorites = JSON.parse(localStorage.getItem('favorites')) || []
 const recipeName = JSON.parse(localStorage.getItem('recipeName')) || []
 const recipe_info = $('#recipe-info')
 const categoryName = JSON.parse(localStorage.getItem("categoryName")) || []
+const user_fav = $('.user-favorites')
+
+
+
+user_fav.innerText = favorites
+
 window.addEventListener('scroll', ()=>
     {
         if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)

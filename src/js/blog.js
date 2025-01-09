@@ -124,13 +124,13 @@ const posts = [
     link: "https://thewoksoflife.com/pho-vietnamese-noodle-soup/",
   },
   {
-    image: "../../assets/images/easy_cook.jpg",
+    image: "../../assets/images/easy_cook.webp",
     title: "5 Easy Cooking Tips",
     description: "Useful Tips to Make Cooking Easier",
     link: "https://thurmontkountrykitchen.com/top-5-cooking-tips-for-beginners/",
   },
   {
-    image: "../../assets/images/christine-ha.webp",
+    image: "../../assets/images/christine-ha.jpg",
     title: "Ănthology series của Saigoneer",
     description:
       "Vietnamese cuisine worldwide journey",
